@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Ngọc Thành_</title>
+  <link rel="icon" type="image/png" href="logomeo.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      background: url('giphy.gif') no-repeat center center fixed;
+      background-size: cover;
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.42);
+      backdrop-filter: blur(22px) saturate(160%);
+      -webkit-backdrop-filter: blur(22px) saturate(160%);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+      border-radius: 12px !important;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .glass-card a.bg-white:hover {
+      background-color: rgba(255, 255, 255, 0.5) !important;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.32);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .tab-btn.active {
+      background: #f59e0b;
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(245, 158, 11, 0.35);
+    }
+
+    .tab-btn:not(.active):hover {
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    .spin-disc {
+      animation: spinSlow 8s linear infinite;
+    }
+    .spin-paused {
+      animation-play-state: paused;
+    }
+
+    .photo-stack-container {
+      position: relative;
+      width: 220px;
+      height: 250px;
+      margin: 0 auto;
+    }
+    .photo-card {
+      position: absolute;
+      inset: 0;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 3px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      background: #fff;
+    }
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(100, 116, 139, 0.4);
+      border-radius: 99px;
+    }
+  </style>
+</head>
+<body class="py-6 px-3 sm:px-6 lg:px-8 flex flex-col items-center justify-center">
+
+  <main class="w-full max-w-[1060px] space-y-4 relative z-10">
+    
+    <!-- HEADER / PROFILE BIO -->
+    <header class="glass-panel rounded-[24px] p-5 sm:p-7 flex flex-col md:flex-row items-center md:items-start gap-6">
+      <div class="flex flex-col items-center shrink-0">
+        <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full p-1 bg-white/70 shadow-md relative">
+          <img src="https://i.postimg.cc/KvY72Js3/1790417606009-189691966132291621-5253092845041517922-dd6b972e37bc0d14dd8fe6abb278c349.jpg" alt="SoulLab Avatar" class="w-full h-full object-cover rounded-full">
+        </div>
+        
+        <div class="mt-3 flex flex-col items-center md:items-start text-xs font-medium text-slate-700 space-y-1">
+          <button type="button" onclick="toggleOnlineStatus()" class="flex items-center gap-1.5 hover:opacity-80 transition cursor-pointer">
+    <span id="statusDot" class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+    <span id="statusText" class="font-semibold text-slate-800">Đang Online</span>
+</button>
+          <div class="flex items-center gap-1.5 text-slate-600">
+            <i class="fa-solid fa-location-dot text-slate-700"></i>
+            <span>Vĩnh Long, Vietnam</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-1 text-center md:text-left">
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center justify-center md:justify-start gap-2">
+          Hey, tôi là Ngọc Thành_ <span class="text-2xl">👋</span>
+        </h1>
+        
+        <p class="mt-2.5 text-sm sm:text-[15px] leading-relaxed text-slate-700 font-medium">
+          Xin chào! Tôi là <strong class="text-slate-900">Ngọc Thành_ (2007)</strong> - đang tập trung quay trở lại và hướng tới chuyên ngành công nghệ đã học sau một thời gian trải nghiệm các công việc khác nhau. Song song đó, tôi dành thời gian tự học lập trình và phát triển các dự án game cộng đồng, định hướng ứng dụng kiến thức bảo mật để cải thiện trải nghiệm cho người chơi. 
+          <button onclick="toggleMoreBio()" id="moreBioBtn" class="text-slate-900 font-bold hover:underline inline-flex items-center gap-1 cursor-pointer">
+            Xem thêm? <span>✎</span>
+          </button>
+        </p>
+
+        <p id="extraBioText" class="hidden mt-2 text-sm leading-relaxed text-slate-700 bg-white/40 p-3 rounded-xl border border-white/50">
+          Hiện tại mình đang vận hành máy chủ Minecraft cộng đồng, nghiên cứu tối ưu hóa hệ thống mạng, bảo mật chống DDoS và phát triển plugin/web tích hợp. Rất vui được giao lưu cùng anh em chung đam mê!
+        </p>
+
+        <div class="mt-4 flex items-center justify-center md:justify-start gap-2.5">
+          <a href="mailto:ngthanh161207@gmail.com" title="Email" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-sm transition hover:scale-110">
+            <i class="fa-solid fa-envelope text-sm"></i>
+          </a>
+          <a href="https://github.com" target="_blank" title="GitHub" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-sm transition hover:scale-110">
+            <i class="fa-brands fa-github text-base"></i>
+          </a>
+          <a href="https://discord.com" target="_blank" title="Discord" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-sm transition hover:scale-110">
+            <i class="fa-brands fa-discord text-sm"></i>
+          </a>
+          <a href="https://facebook.com" target="_blank" title="Facebook" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-sm transition hover:scale-110">
+            <i class="fa-brands fa-facebook-f text-sm"></i>
+          </a>
+          <a href="https://tiktok.com" target="_blank" title="TikTok" class="w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-sm transition hover:scale-110">
+            <i class="fa-brands fa-tiktok text-sm"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <nav class="glass-panel rounded-[20px] p-2.5 flex flex-wrap items-center justify-between gap-2">
+      <div class="flex flex-wrap items-center gap-1.5 sm:gap-2">
+        <button onclick="switchTab('about', this)" class="tab-btn active px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition flex items-center gap-1.5 cursor-pointer">
+          About <span>✌️</span>
+        </button>
+        <button onclick="switchTab('projects', this)" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 transition flex items-center gap-1.5 cursor-pointer">
+          Projects <i class="fa-solid fa-table-cells-large text-indigo-500"></i>
+        </button>
+        <button onclick="switchTab('games', this)" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 transition flex items-center gap-1.5 cursor-pointer">
+          Games <i class="fa-solid fa-gamepad text-emerald-600"></i>
+        </button>
+        <button onclick="switchTab('pinterest', this)" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 transition flex items-center gap-1.5 cursor-pointer">
+          Pinterest <i class="fa-brands fa-pinterest text-red-600"></i>
+        </button>
+        <button onclick="switchTab('donate', this)" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 transition flex items-center gap-1.5 cursor-pointer">
+          Nuoi Toi <span class="text-red-500">❤️</span>
+        </button>
+        <button onclick="switchTab('mxh', this)" class="tab-btn px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-700 transition flex items-center gap-1.5 cursor-pointer">
+          MXH <span class="text-red-500">🌐</span>
+        </button>
+      </div>
+
+      <button title="Cài đặt hiển thị" class="w-9 h-9 rounded-xl bg-white/80 hover:bg-white text-slate-700 flex items-center justify-center shadow-sm transition cursor-pointer ml-auto">
+        <i class="fa-solid fa-gear"></i>
+      </button>
+    </nav>
+
+    <!-- TAB CONTENT: ABOUT -->
+     <div class="glass-panel rounded-[24px] p-5 sm:p-8">
+    <div id="tab-about" class="tab-content block">
+      <div class="inline-flex items-center gap-2.5 bg-white/35 px-3.5 py-1.5 rounded-lg border border-white/50 shadow-xs mb-4">
+  <span class="w-1.5 h-6 bg-slate-900 rounded-full"></span>
+  <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Giới thiệu về tôi 💤</h2>
+</div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- LEFT COLUMN -->
+        <div class="lg:col-span-7 space-y-6">
+          <section>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-2.5">
+              <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+              Tôi đang làm gì? <span>🤔</span>
+            </h3>
+            <div class="space-y-3 text-sm leading-relaxed text-slate-700 font-medium pl-4">
+              <p>
+                Sau một thời gian thử sức ở các lĩnh vực khác nhau, hiện tại tôi đang tập trung quay trở lại và hướng tới chuyên ngành công nghệ đã học. Công việc hiện nay giúp tôi tiếp cận sâu hơn về hệ thống và mạng máy tính, củng cố lại các kiến thức cơ bản và tích lũy thêm kinh nghiệm thực tế.
+              </p>
+              <p>
+                Bên cạnh giờ làm việc, tôi dành thời gian tự học lập trình và tham gia phát triển các dự án game cộng đồng. Định hướng của tôi là kết hợp kiến thức bảo mật sẵn có nhằm góp phần xây dựng những sân chơi giải trí ổn định, an toàn và tối ưu trải nghiệm người dùng.
+              </p>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-2.5">
+              <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+              Web này là gì? <span>🍷</span>
+            </h3>
+            <div class="flex flex-col sm:flex-row gap-4 items-start pl-4">
+              <div class="space-y-3 text-sm leading-relaxed text-slate-700 font-medium flex-1">
+                <p>
+                  Trang web này là một không gian nhỏ cá nhân để tôi lưu giữ hành trình học hỏi, tổng hợp một số dự án thực tế và chia sẻ các kiến thức công nghệ mà mình tích lũy được trong suốt quá trình làm việc cũng như tự học.
+                </p>
+                <p>
+                  Đồng thời, đây cũng là chiếc cầu nối mở giúp tôi giao lưu, kết nối với những bạn có chung niềm đam mê. Tôi luôn sẵn sàng chào đón các ý kiến chia sẻ kỹ thuật mang tính xây dựng và những cơ hội hợp tác thú vị để cùng học hỏi và phát triển.
+                </p>
+              </div>
+              <div class="w-full sm:w-44 h-48 rounded-2xl overflow-hidden shadow-md border-2 border-white/70 shrink-0">
+                <img src="https://i.postimg.cc/VLr6nVG0/1795428987361-189691966132291621-5253092845041517922-4ed909ca1699b8531022f1cc3fbf848d.jpg" alt="Workspace" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center gap-2 mb-3">
+              <span class="w-2 h-2 rounded-full bg-slate-400"></span>
+              Video yêu thích của tôi <i class="fa-brands fa-youtube text-slate-800"></i>
+            </h3>
+            
+            <div class="glass-card rounded-2xl p-4">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-9 h-9 rounded-full bg-slate-900 text-white flex items-center justify-center shrink-0">
+                  <i class="fa-solid fa-play text-xs"></i>
+                </div>
+                <div>
+                  <h4 class="text-sm font-bold text-slate-900">PC - Bài Học Quý Giá (Official MV)</h4>
+                  <p class="text-xs text-slate-500">YouTube Video</p>
+                </div>
+              </div>
+
+              <div class="relative rounded-xl overflow-hidden aspect-video bg-slate-900 group">
+                <div id="videoPoster" onclick="playYoutubeVideo()" class="w-full h-full relative cursor-pointer">
+                  <img src="https://img.youtube.com/vi/2zJeV5NJSl8/hqdefault.jpg" alt="PC - Bài học quý giá" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                  <div class="absolute inset-0 bg-black/25 flex flex-col items-center justify-center">
+                    <span class="text-white text-3xl sm:text-5xl font-serif tracking-[0.2em] font-bold drop-shadow-lg">PC</span>
+                    <div class="mt-2 w-12 h-12 rounded-full bg-white/90 text-slate-900 flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+                      <i class="fa-solid fa-play ml-0.5"></i>
+                    </div>
+                  </div>
+                  <span class="absolute bottom-3 left-3 text-white font-extrabold text-xl drop-shadow">4K <span class="text-[10px] font-normal uppercase">Ultra HD</span></span>
+                  <span class="absolute bottom-3 right-3 text-white/80 text-xs font-serif">4K Films By Adnan</span>
+                </div>
+                <iframe id="youtubeIframe" class="hidden w-full h-full" src="" title="YouTube video player" frameborder="0" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+
+              <div class="mt-2.5 text-center space-y-0.5">
+                <p class="text-xs font-medium text-slate-600">Nhấn để phát video</p>
+                <p class="text-[11px] text-slate-500">Nhấn vào thẻ để phóng to video</p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <!-- RIGHT COLUMN -->
+        <div class="lg:col-span-5 space-y-5">
+          <!-- Công việc -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5">
+            <h4 class="text-sm font-bold text-slate-800 flex items-center gap-2 mb-3">
+              <i class="fa-solid fa-briefcase text-slate-700"></i> Công việc
+            </h4>
+            <div class="flex items-center justify-between pt-1">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-white/80 border border-white flex items-center justify-center text-slate-700 shadow-sm">
+                  <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Sinh Viên</div>
+                  <div class="text-xs text-slate-600">Công nghệ thông tin</div>
+                </div>
+              </div>
+              <span class="text-[11px] font-semibold bg-white/60 text-slate-700 px-2.5 py-1 rounded-full">
+                2025 - Hiện tại
+              </span>
+            </div>
+          </div>
+
+          <!-- Học vấn -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5">
+            <h4 class="text-sm font-bold text-slate-800 flex items-center gap-2 mb-3.5">
+              <i class="fa-solid fa-graduation-cap text-slate-700"></i> Học vấn
+            </h4>
+            <div class="flex items-start gap-3">
+              <div class="w-11 h-11 rounded-full bg-white p-0.5 border border-slate-200/80 shadow-sm flex items-center justify-center shrink-0 overflow-hidden">
+                <img src="https://i.postimg.cc/HxkSh5Ry/images.png" alt="Logo TVU" class="w-full h-full object-cover rounded-full">
+              </div>
+              <div>
+                <h5 class="text-sm font-extrabold text-slate-900 uppercase">ĐẠI HỌC TRÀ VINH</h5>
+                <p class="text-xs text-sky-700 font-medium">TVU (Tra Vinh University)</p>
+              </div>
+            </div>
+            <p class="mt-3 text-xs leading-relaxed text-slate-700">
+              Đang học ngành Công nghệ thông tin tại Trường Đại học Trà Vinh. Nền tảng học thuật giúp tôi tiếp cận sâu về bảo mật dữ liệu và phát triển các giải pháp phòng ngừa rủi ro mạng trong thực tế.
+            </p>
+            <a href="https://www.tvu.edu.vn" target="_blank" style="background: rgba(255,255,255,0.85) !important;" class="mt-3.5 w-full py-2 px-4 rounded-xl hover:bg-white text-slate-800 font-bold text-xs border border-white shadow-sm flex items-center justify-center gap-2 transition">
+              <i class="fa-solid fa-globe"></i> Website Trường
+            </a>
+          </div>
+
+          <!-- Thư viện ảnh -->
+          <div class="glass-card rounded-2xl p-4 sm:p-5">
+            <div class="flex items-center justify-between mb-2">
+              <h4 class="text-sm font-bold text-slate-800 flex items-center gap-2">
+                <i class="fa-regular fa-image text-slate-700"></i> Thư viện ảnh
+              </h4>
+              <span id="photoCounter" class="text-[11px] font-bold bg-white/80 text-slate-700 px-2.5 py-0.5 rounded-full border border-white">
+                1 / 6
+              </span>
+            </div>
+            
+            <p id="photoCaption" class="text-center text-xs text-slate-700 mb-4">
+              Đang xem: <strong class="text-slate-900">Images 1</strong>
+            </p>
+
+            <div class="photo-stack-container my-3">
+              <div id="photoCardBack2" class="photo-card" style="transform: rotate(9deg) translate(14px, 4px) scale(0.94); opacity: 0.75; z-index: 1;">
+                <img src="noelyenvu.jpg" alt="Gallery Back 2">
+              </div>
+              <div id="photoCardBack1" class="photo-card" style="transform: rotate(-8deg) translate(-14px, 4px) scale(0.96); opacity: 0.9; z-index: 2;">
+                <img src="hiepthanh.jpg" alt="Gallery Back 1">
+              </div>
+              <div id="photoCardFront" class="photo-card" style="transform: rotate(0deg) scale(1); z-index: 3;">
+                <img id="currentGalleryImg" src="hiepthanh1.jpg" alt="Gallery Front">
+              </div>
+            </div>
+
+            <div class="mt-5 flex items-center justify-center gap-4 text-xs font-bold text-slate-700">
+              <button onclick="prevPhoto()" class="hover:text-slate-950 transition cursor-pointer flex items-center gap-1">
+                <i class="fa-solid fa-chevron-left text-[10px]"></i> Trước
+              </button>
+              <div id="photoDots" class="flex items-center gap-1.5">
+                <span class="w-4 h-1.5 rounded-full bg-slate-800 transition-all"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 transition-all"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 transition-all"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 transition-all"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 transition-all"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-slate-400 transition-all"></span>
+              </div>
+              <button onclick="nextPhoto()" class="hover:text-slate-950 transition cursor-pointer flex items-center gap-1">
+                Sau <i class="fa-solid fa-chevron-right text-[10px]"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        </div>
+
+    <!-- OTHER TABS -->
+    <div id="tab-projects" class="tab-content hidden">
+      <div class="flex items-center gap-2.5 mb-5">
+        <span class="w-1 h-6 bg-indigo-500 rounded-full"></span>
+        <h2 class="text-xl font-extrabold text-slate-900">Dự án nổi bật 🚀</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="glass-card rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700">Active Server</span>
+            <i class="fa-solid fa-server text-slate-600"></i>
+          </div>
+          <h3 class="text-base font-extrabold text-slate-900">CC3MSMP Network</h3>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Hệ thống máy chủ Minecraft cộng đồng với cơ chế Survival, Skyblock tối ưu hiệu năng cao và hệ thống Anti-Cheat, Anti-DDoS tự phát triển.</p>
+        </div>
+        <div class="glass-card rounded-2xl p-5">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-sky-100 text-sky-700">Security & Web</span>
+            <i class="fa-solid fa-shield-halved text-slate-600"></i>
+          </div>
+          <h3 class="text-base font-extrabold text-slate-900">Portfolio & Dashboard System</h3>
+          <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">Giao diện web cá nhân phong cách Glassmorphism hiện đại kết hợp hệ thống quản lý trạng thái mạng theo thời gian thực.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- TAB CONTENT: GAMES -->
+<div id="tab-games" class="tab-content hidden space-y-6">
+
+  <!-- Header Không Gian Thư Giãn -->
+  <div class="space-y-3.5">
+    <!-- Hàng 1: Nhãn tiêu đề bên trái + Huy hiệu Trạng thái bên phải -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="inline-flex items-center gap-2.5 bg-white/25 backdrop-blur-md px-4 py-2 rounded-xl border border-white/50 shadow-xs self-start">
+        <span class="w-1.5 h-6 bg-slate-900 rounded-full"></span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Không Gian Thư Giãn 🎮</h2>
+      </div>
+
+      <div class="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/70 shadow-xs self-start shrink-0 whitespace-nowrap">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="text-xs font-semibold text-slate-700">Trạng thái: <strong class="text-emerald-600">Rảnh rỗi</strong></span>
+      </div>
+    </div>
+
+    <!-- Hàng 2: Dòng mô tả màu đen toàn bộ -->
+    <p class="text-xs sm:text-sm font-medium text-black leading-relaxed">
+      Danh sách các tựa game yêu thích và công cụ "cày cuốc" quen thuộc sau những giờ lập trình căng thẳng. Tổng cộng <strong class="font-extrabold text-black">8 tựa game</strong> đa nền tảng ✨
+    </p>
+  </div>
+
+  <!-- 4 Thẻ thống kê nhanh (Nền trắng trong mờ, khoảng cách đều) -->
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-3.5 pt-1">
+    <!-- Thẻ 1 -->
+    <div class="bg-white/45 backdrop-blur-md rounded-2xl px-4 py-3.5 border border-white/60 shadow-xs flex items-center gap-3.5 transition hover:bg-white/60">
+      <div class="w-9 h-9 rounded-xl bg-sky-500/15 text-sky-600 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-gamepad text-sm"></i>
+      </div>
+      <div class="min-w-0">
+        <div class="text-xs font-extrabold text-slate-900 truncate">8 Tựa Game</div>
+        <div class="text-[11px] font-medium text-slate-600 truncate">PC &amp; Mobile</div>
+      </div>
+    </div>
+
+    <!-- Thẻ 2 -->
+    <div class="bg-white/45 backdrop-blur-md rounded-2xl px-4 py-3.5 border border-white/60 shadow-xs flex items-center gap-3.5 transition hover:bg-white/60">
+      <div class="w-9 h-9 rounded-xl bg-rose-500/15 text-rose-600 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-crosshairs text-sm"></i>
+      </div>
+      <div class="min-w-0">
+        <div class="text-xs font-extrabold text-slate-900 truncate">FPS &amp; MOBA</div>
+        <div class="text-[11px] font-medium text-slate-600 truncate">Leo rank cùng bạn bè</div>
+      </div>
+    </div>
+
+    <!-- Thẻ 3 -->
+    <div class="bg-white/45 backdrop-blur-md rounded-2xl px-4 py-3.5 border border-white/60 shadow-xs flex items-center gap-3.5 transition hover:bg-white/60">
+      <div class="w-9 h-9 rounded-xl bg-emerald-500/15 text-emerald-600 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-server text-sm"></i>
+      </div>
+      <div class="min-w-0">
+        <div class="text-xs font-extrabold text-slate-900 truncate">CC3M SMP</div>
+        <div class="text-[11px] font-medium text-slate-600 truncate">Máy chủ Minecraft</div>
+      </div>
+    </div>
+
+    <!-- Thẻ 4 -->
+    <div class="bg-white/45 backdrop-blur-md rounded-2xl px-4 py-3.5 border border-white/60 shadow-xs flex items-center gap-3.5 transition hover:bg-white/60">
+      <div class="w-9 h-9 rounded-xl bg-amber-500/15 text-amber-600 flex items-center justify-center shrink-0">
+        <i class="fa-solid fa-headset text-sm"></i>
+      </div>
+      <div class="min-w-0">
+        <div class="text-xs font-extrabold text-slate-900 flex items-center gap-1.5 truncate">
+          <span>Voice Squad</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0"></span>
+        </div>
+        <div class="text-[11px] font-medium text-slate-600 truncate">Sẵn sàng ghép đội</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner Tựa Game Nổi Bật (Minecraft) -->
+  <div class="relative rounded-2xl overflow-hidden bg-slate-900 text-white p-5 sm:p-7 shadow-md border border-white/20">
+    <img src="https://images.unsplash.com/photo-1627856013091-fed6e4e30025?q=80&w=1200&auto=format&fit=crop" alt="Minecraft Banner" class="absolute inset-0 w-full h-full object-cover opacity-30">
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/80 to-slate-900/40"></div>
+
+    <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+      <div class="space-y-2.5 max-w-xl">
+        <div class="inline-flex items-center gap-1.5 bg-rose-500/20 border border-rose-400/30 text-rose-300 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+          <i class="fa-solid fa-fire"></i> Tựa Game Nổi Bật
+        </div>
+        <div class="text-[11px] font-bold tracking-wider text-slate-300 uppercase">
+          MOJANG STUDIOS • <span class="text-emerald-400">PC - Java (Fabric)</span> • <span class="text-amber-400">1500+ Giờ</span>
+        </div>
+        <h3 class="text-xl sm:text-2xl font-extrabold flex items-center gap-2.5">
+          <span class="w-7 h-7 rounded-lg bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 flex items-center justify-center text-sm">
+            <i class="fa-solid fa-cube"></i>
+          </span>
+          Minecraft: Java Edition
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Tựa game gắn bó lâu năm nhất. Nơi tôi thỏa sức sáng tạo với mod Fabric, shader và trực tiếp vận hành cụm máy chủ <strong class="text-white">cc3msmp.net</strong> cho cộng đồng.
+        </p>
+        <div class="pt-1 flex flex-wrap items-center gap-2">
+          <button type="button" onclick="navigator.clipboard.writeText('cc3msmp.net'); alert('Đã sao chép IP: cc3msmp.net');" class="px-3.5 py-1.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer">
+            <i class="fa-solid fa-server"></i> IP: cc3msmp.net
+          </button>
+          <a href="#setup-section" class="px-3.5 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-white text-xs font-semibold transition flex items-center gap-1.5">
+            <i class="fa-solid fa-desktop"></i> Xem Góc Máy
+          </a>
+        </div>
+      </div>
+
+      <!-- Tags nhanh góc phải banner -->
+      <div class="flex flex-wrap gap-1.5 self-start bg-slate-950/60 backdrop-blur-md p-2 rounded-xl border border-white/10 text-[11px] font-semibold">
+        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/20 text-emerald-300">• Minecraft</span>
+        <span class="px-2.5 py-1 rounded-lg bg-rose-500/20 text-rose-300">• Valorant</span>
+        <span class="px-2.5 py-1 rounded-lg bg-sky-500/20 text-sky-300">• LMHT</span>
+        <span class="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-300">• Liên Quân</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Thanh Lọc Danh Mục & Tìm Kiếm -->
+  <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+    <div class="flex flex-wrap items-center gap-1.5" id="gameFilterBtns">
+      <button type="button" onclick="filterGames('all', this)" class="game-filter-btn active px-3 py-1.5 rounded-xl bg-slate-900 text-white text-xs font-bold transition cursor-pointer">
+        Tất cả <span class="opacity-75 ml-0.5">8</span>
+      </button>
+      <button type="button" onclick="filterGames('pc', this)" class="game-filter-btn px-3 py-1.5 rounded-xl bg-white/80 hover:bg-white text-slate-700 text-xs font-semibold transition cursor-pointer">
+        💻 PC <span class="opacity-60 ml-0.5">4</span>
+      </button>
+      <button type="button" onclick="filterGames('mobile', this)" class="game-filter-btn px-3 py-1.5 rounded-xl bg-white/80 hover:bg-white text-slate-700 text-xs font-semibold transition cursor-pointer">
+        📱 Mobile <span class="opacity-60 ml-0.5">4</span>
+      </button>
+      <button type="button" onclick="filterGames('competitive', this)" class="game-filter-btn px-3 py-1.5 rounded-xl bg-white/80 hover:bg-white text-slate-700 text-xs font-semibold transition cursor-pointer">
+        🎯 FPS &amp; MOBA <span class="opacity-60 ml-0.5">4</span>
+      </button>
+      <button type="button" onclick="filterGames('openworld', this)" class="game-filter-btn px-3 py-1.5 rounded-xl bg-white/80 hover:bg-white text-slate-700 text-xs font-semibold transition cursor-pointer">
+        🌍 Thế giới mở <span class="opacity-60 ml-0.5">3</span>
+      </button>
+    </div>
+
+    <div class="relative w-full md:w-60">
+      <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+      <input type="text" id="gameSearchInput" onkeyup="searchGames()" placeholder="Tìm kiếm game..." class="w-full pl-8 pr-3 py-1.5 rounded-xl bg-white/85 border border-white text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/20">
+    </div>
+  </div>
+
+  <!-- Lưới 8 Thẻ Game -->
+  <div id="gamesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <!-- 1. Minecraft -->
+    <div class="game-card bg-white/90 rounded-2xl overflow-hidden border border-white shadow-sm flex flex-col justify-between transition hover:-translate-y-1" data-category="pc openworld" data-name="minecraft java edition smp">
+      <div>
+        <div class="relative h-36 bg-slate-800">
+          <img src="hinh-nen-minecraft-3.jpg" alt="Minecraft" class="w-full h-full object-cover">
+          <span class="absolute top-2.5 left-2.5 bg-slate-950/75 text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">PC • JAVA</span>
+          <span class="absolute top-2.5 right-2.5 bg-emerald-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">★ Tựa 1 Yêu Thích</span>
+          <span class="absolute bottom-2.5 right-2.5 bg-slate-950/80 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● 1500+ Giờ</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+            <span>MOJANG STUDIOS</span>
+            <span>Thế giới mở / Sandbox</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">Minecraft: Java Edition</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Sandbox</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Sinh Tồn</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 text-[10px] font-semibold">cc3msmp.net</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+            Tựa game gắn bó lâu năm nhất. Xây dựng, cài mod Fabric/Shader và vận hành server survival cùng bạn bè.
+          </p>
+          <div class="pt-1 text-xs text-slate-500">
+            Ingame: <span class="font-bold text-slate-800">NezukosXD</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-emerald-600 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hoạt động</span>
+        <a href="https://www.minecraft.net" target="_blank" class="font-bold text-slate-700 hover:text-slate-950">Khám phá <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+      </div>
+    </div>
+
+    <!-- 2. Valorant -->
+    <div class="game-card bg-white/90 rounded-2xl overflow-hidden border border-white shadow-sm flex flex-col justify-between transition hover:-translate-y-1" data-category="pc competitive" data-name="valorant riot fps ban sung">
+      <div>
+        <div class="relative h-36 bg-slate-800">
+          <img src="valorant-clove-3840x2160-16044.jpeg" alt="Valorant" class="w-full h-full object-cover">
+          <span class="absolute top-2.5 left-2.5 bg-slate-950/75 text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">PC • RIOT CLIENT</span>
+          <span class="absolute top-2.5 right-2.5 bg-rose-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">● Cày Rank</span>
+          <span class="absolute bottom-2.5 right-2.5 bg-slate-950/80 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● 500+ Giờ</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+            <span>RIOT GAMES</span>
+            <span>Tactical FPS 5v5</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">VALORANT</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Tactical FPS</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Bắn Súng</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Đấu Súng Kỹ Năng</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+            Đấu súng chiến thuật 5v5 kết hợp bộ kỹ năng đặc vụ. Những pha clutch căng não và call team giải trí cuối ngày.
+          </p>
+          <div class="pt-1 text-xs text-slate-500">
+            Ingame: <span class="font-bold text-slate-800">SeiCutee</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-emerald-600 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hoạt động</span>
+        <a href="https://playvalorant.com/vi-vn/" target="_blank" class="font-bold text-slate-700 hover:text-slate-950">Khám phá <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+      </div>
+    </div>
+
+    <!-- 3. Liên Minh Huyền Thoại -->
+    <div class="game-card bg-white/90 rounded-2xl overflow-hidden border border-white shadow-sm flex flex-col justify-between transition hover:-translate-y-1" data-category="pc competitive" data-name="lien minh huyen thoai lol league of legends moba">
+      <div>
+        <div class="relative h-36 bg-slate-800">
+          <img src="lol4k.jpg" alt="Liên Minh Huyền Thoại" class="w-full h-full object-cover">
+          <span class="absolute top-2.5 left-2.5 bg-slate-950/75 text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">PC • RIOT CLIENT</span>
+          <span class="absolute bottom-2.5 right-2.5 bg-slate-950/80 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● 800+ Giờ</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+            <span>RIOT GAMES</span>
+            <span>MOBA Chiến Thuật</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">Liên Minh Huyền Thoại (LoL)</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">MOBA 5v5</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">ARAM</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Esports</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+            Đấu trường công lý Summoner's Rift kinh điển. Nơi giao lưu kỹ năng cá nhân và phối hợp giao tranh tổng cùng hội bạn.
+          </p>
+          <div class="pt-1 text-xs text-slate-500">
+            Ingame: <span class="font-bold text-slate-800">SeiCutee</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-emerald-600 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hoạt động</span>
+        <a href="https://leagueoflegends.zing.vn/" target="_blank" class="font-bold text-slate-700 hover:text-slate-950">Khám phá <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+      </div>
+    </div>
+
+    <!-- 4. Liên Quân Mobile -->
+    <div class="game-card bg-white/90 rounded-2xl overflow-hidden border border-white shadow-sm flex flex-col justify-between transition hover:-translate-y-1" data-category="mobile competitive" data-name="lien quan mobile aov arena of valor moba">
+      <div>
+        <div class="relative h-36 bg-slate-800">
+          <img src="lien-quan-2021.webp" alt="Liên Quân Mobile" class="w-full h-full object-cover">
+          <span class="absolute top-2.5 left-2.5 bg-slate-950/75 text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">MOBILE • IOS / ANDROID</span>
+          <span class="absolute top-2.5 right-2.5 bg-indigo-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full">● Livestream</span>
+          <span class="absolute bottom-2.5 right-2.5 bg-slate-950/80 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● 600+ Giờ</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+            <span>GARENA • TIMI STUDIO</span>
+            <span>MOBA Di Động</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">Liên Quân Mobile</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">MOBA Mobile</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Leo Rank</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Voice Chat</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+            Tựa game di động tiện lợi để leo rank nhanh và giao lưu cùng anh em mọi lúc mọi nơi khi không ngồi trước PC.
+          </p>
+          <div class="pt-1 text-xs text-slate-500">
+            Ingame: <span class="font-bold text-slate-800">noirseiˇ</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-emerald-600 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hoạt động</span>
+        <a href="https://lienquan.garena.vn/" target="_blank" class="font-bold text-slate-700 hover:text-slate-950">Khám phá <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+      </div>
+    </div>
+
+    <!-- 5. Genshin Impact -->
+    <div class="game-card bg-white/90 rounded-2xl overflow-hidden border border-white shadow-sm flex flex-col justify-between transition hover:-translate-y-1" data-category="pc openworld" data-name="genshin impact hoyoverse arpg the gioi mo">
+      <div>
+        <div class="relative h-36 bg-slate-800">
+          <img src="genshin4k.webp" alt="Genshin Impact" class="w-full h-full object-cover">
+          <span class="absolute top-2.5 left-2.5 bg-slate-950/75 text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">PC / MOBILE • HOYOVERSE</span>
+          <span class="absolute bottom-2.5 right-2.5 bg-slate-950/80 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● 400+ Giờ</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+            <span>HOYOVERSE</span>
+            <span>Nhập Vai Thế Giới Mở</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">Genshin Impact</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Open World</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">ARPG</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Cốt Truyện</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+            Phiêu lưu khám phá lục địa Teyvat rộng lớn với đồ họa anime mãn nhãn, nhạc nền thư giãn và hệ thống nguyên tố độc đáo.
+          </p>
+          <div class="pt-1 text-xs text-slate-500">
+            Ingame: <span class="font-bold text-slate-800">SeiCutee</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-emerald-600 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hoạt động</span>
+        <a href="https://genshin.hoyoverse.com/vi/" target="_blank" class="font-bold text-slate-700 hover:text-slate-950">Khám phá <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+      </div>
+    </div>
+
+    <!-- 6. Crossfire: Legends -->
+    <div class="game-card bg-white/90 rounded-2xl overflow-hidden border border-white shadow-sm flex flex-col justify-between transition hover:-translate-y-1" data-category="mobile competitive" data-name="crossfire legends cfl dot kich mobile fps">
+      <div>
+        <div class="relative h-36 bg-slate-800">
+          <img src="cf4k.jpg" alt="Crossfire Legends" class="w-full h-full object-cover">
+          <span class="absolute top-2.5 left-2.5 bg-slate-950/75 text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">MOBILE • FPS</span>
+          <span class="absolute bottom-2.5 right-2.5 bg-slate-950/80 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● 250+ Giờ</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+            <span>SMILEGATE / TENCENT</span>
+            <span>Bắn Súng Góc Nhìn Thứ Nhất</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">Crossfire: Legends</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Mobile FPS</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Đặt Bom C4</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Zombie</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+            Phiên bản di động giữ trọn chất Đột Kích huyền thoại với các chế độ Đặt Bom, Đấu Đội và săn Zombie kịch tính.
+          </p>
+          <div class="pt-1 text-xs text-slate-500">
+            Ingame: <span class="font-bold text-slate-800">NyanSeii</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-emerald-600 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hoạt động</span>
+        <span class="font-bold text-slate-500">Mobile FPS</span>
+      </div>
+    </div>
+
+    <!-- 7. FC Mobile VN -->
+    <div class="game-card bg-white/90 rounded-2xl overflow-hidden border border-white shadow-sm flex flex-col justify-between transition hover:-translate-y-1" data-category="mobile" data-name="fc mobile vn fifa bong da the thao">
+      <div>
+        <div class="relative h-36 bg-slate-800">
+          <img src="fcmobile4k.jpg" alt="FC Mobile VN" class="w-full h-full object-cover">
+          <span class="absolute top-2.5 left-2.5 bg-slate-950/75 text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">MOBILE • SPORTS</span>
+          <span class="absolute bottom-2.5 right-2.5 bg-slate-950/80 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● 200+ Giờ</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+            <span>EA SPORTS</span>
+            <span>Thể Thao / Bóng Đá</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">EA SPORTS FC Mobile VN</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Bóng Đá</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Xây Đội Hình</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Đấu Rank</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+            Xây dựng đội hình trong mơ với dàn siêu sao bản quyền, đập thẻ nâng cấp chỉ số và so tài kỹ năng sân cỏ trực tuyến.
+          </p>
+          <div class="pt-1 text-xs text-slate-500">
+            Ingame: <span class="font-bold text-slate-800">noirseiˇ</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-emerald-600 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hoạt động</span>
+        <a href="https://fcmobile.garena.vn/" target="_blank" class="font-bold text-slate-700 hover:text-slate-950">Khám phá <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+      </div>
+    </div>
+
+    <!-- 8. Play Together -->
+    <div class="game-card bg-white/90 rounded-2xl overflow-hidden border border-white shadow-sm flex flex-col justify-between transition hover:-translate-y-1" data-category="mobile openworld" data-name="play together vng giai tri cau ca">
+      <div>
+        <div class="relative h-36 bg-slate-800">
+          <img src="ptg4k.jpg" alt="Play Together" class="w-full h-full object-cover">
+          <span class="absolute top-2.5 left-2.5 bg-slate-950/75 text-white text-[10px] font-bold px-2 py-0.5 rounded-md uppercase">MOBILE • CASUAL</span>
+          <span class="absolute bottom-2.5 right-2.5 bg-slate-950/80 text-amber-400 text-[10px] font-bold px-2 py-0.5 rounded-full">● 150+ Giờ</span>
+        </div>
+        <div class="p-4 space-y-2">
+          <div class="flex items-center justify-between text-[10px] text-slate-400 font-bold uppercase">
+            <span>HAEGIN / VNGGAMES</span>
+            <span>Giải Trí / Cộng Đồng</span>
+          </div>
+          <h4 class="text-sm font-extrabold text-slate-900">Play Together</h4>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Câu Cá</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Trang Trí Nhà</span>
+            <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Mini Game</span>
+          </div>
+          <p class="text-xs text-slate-600 leading-relaxed line-clamp-2">
+            Thế giới ảo nhẹ nhàng để câu cá hiếm, thiết kế nhà cửa và tụ tập chơi mini game thư giãn cùng bạn bè sau giờ học.
+          </p>
+          <div class="pt-1 text-xs text-slate-500">
+            Ingame: <span class="font-bold text-slate-800">noirseiˇ</span>
+          </div>
+        </div>
+      </div>
+      <div class="px-4 py-2.5 border-t border-slate-100 flex items-center justify-between text-[11px]">
+        <span class="text-emerald-600 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Hoạt động</span>
+        <a href="https://playtogether.vnggames.com/" target="_blank" class="font-bold text-slate-700 hover:text-slate-950">Khám phá <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- KHU VỰC DƯỚI: GÓC MÁY & THIẾT BỊ GAMING + GHÉP ĐỘI & GIAO LƯU -->
+  <div id="setup-section" class="grid grid-cols-1 lg:grid-cols-12 gap-4 pt-2">
+
+    <!-- Cột trái: Góc Máy & Thiết Bị Gaming (Bạn sửa thông số máy của bạn tại đây) -->
+    <div class="lg:col-span-6 bg-white/85 rounded-2xl p-5 border border-white shadow-sm space-y-4">
+      <div class="flex items-center justify-between">
+        <h3 class="text-sm font-extrabold text-slate-900 flex items-center gap-2">
+          <span class="w-7 h-7 rounded-lg bg-sky-100 text-sky-600 flex items-center justify-center">
+            <i class="fa-solid fa-computer"></i>
+          </span>
+          Góc Máy &amp; Thiết Bị Gaming
+        </h3>
+        <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">MY SETUP</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+        <!-- Ô 1: CPU & GPU -->
+        <div class="bg-white rounded-xl p-3 border border-slate-100 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-microchip text-xs"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="text-[10px] font-bold uppercase text-slate-400">HIỆU NĂNG (CPU / GPU)</div>
+            <div class="text-xs font-extrabold text-slate-800 truncate">Intel Core 5 • NVIDIA GeForce RTX 3050</div>
+          </div>
+        </div>
+
+        <!-- Ô 2: Màn hình -->
+        <div class="bg-white rounded-xl p-3 border border-slate-100 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-display text-xs"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="text-[10px] font-bold uppercase text-slate-400">MÀN HÌNH</div>
+            <div class="text-xs font-extrabold text-slate-800 truncate">Dual Setup (Màn Hình Rời Chính)</div>
+          </div>
+        </div>
+
+        <!-- Ô 3: Gear -->
+        <div class="bg-white rounded-xl p-3 border border-slate-100 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-keyboard text-xs"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="text-[10px] font-bold uppercase text-slate-400">GEAR</div>
+            <div class="text-xs font-extrabold text-slate-800 truncate">Bàn phím cơ Q82 V9 &amp; Chuột FPS</div>
+          </div>
+        </div>
+
+        <!-- Ô 4: RAM / Âm thanh -->
+        <div class="bg-white rounded-xl p-3 border border-slate-100 flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-headphones text-xs"></i>
+          </div>
+          <div class="min-w-0">
+            <div class="text-[10px] font-bold uppercase text-slate-400">BỘ NHỚ &amp; ÂM THANH</div>
+            <div class="text-xs font-extrabold text-slate-800 truncate">16GB RAM • Tai nghe định vị</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cột phải: Ghép Đội & Giao Lưu Game -->
+    <div class="lg:col-span-6 bg-white/85 rounded-2xl p-5 border border-white shadow-sm flex flex-col justify-between space-y-4">
+      <div class="space-y-2">
+        <h3 class="text-sm font-extrabold text-slate-900 flex items-center gap-2">
+          <span class="w-7 h-7 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center">
+            <i class="fa-brands fa-discord"></i>
+          </span>
+          Ghép Đội &amp; Giao Lưu Game
+        </h3>
+        <p class="text-xs text-slate-600 leading-relaxed">
+          Thường xuyên on-mic voice chat leo rank Valorant, Liên Minh, Liên Quân trên discord <strong class="text-slate-800">CC3M</strong>. Cứ nhắn mình nếu thiếu slot nhé!
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-between gap-2 pt-1">
+        <a href="https://discord.gg/sRBGJ2V5v" target="_blank" class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition flex items-center gap-2 shadow-xs">
+          <i class="fa-brands fa-discord"></i> Tham gia Discord
+        </a>
+        <span class="text-[11px] font-semibold text-slate-500 flex items-center gap-1.5">
+          <i class="fa-solid fa-users text-slate-400"></i> Cộng đồng 24/7
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <div id="tab-pinterest" class="tab-content hidden">
+      <div class="inline-flex items-center gap-2.5 0 px-4 py-2 bg-white/35 px-3.5 py-1.5 rounded-lg border border-white/50 shadow-xs mb-5">
+        <span class="w-1.5 h-6 bg-red-500 rounded-full"></span>
+        <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Góc cảm hứng Pinterest 📌</h2>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?q=80&w=500&auto=format&fit=crop" class="rounded-xl h-40 w-full object-cover shadow">
+        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=500&auto=format&fit=crop" class="rounded-xl h-40 w-full object-cover shadow">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=500&auto=format&fit=crop" class="rounded-xl h-40 w-full object-cover shadow">
+      </div>
+    </div>
+
+    
+        
+        <!-- TAB CONTENT: NUÔI TÔI -->
+        <div id="tab-donate" class="tab-content hidden space-y-5">
+          <!-- Tiêu đề Tab -->
+          <div class="inline-flex items-center gap-2.5 bg-white/80 px-4 py-2 rounded-xl border border-white shadow-xs">
+            <span class="w-1 h-4 bg-slate-900 rounded-full"></span>
+            <h3 class="text-sm font-extrabold text-slate-900">Dự án Nuôi Tôi 🍝</h3>
+          </div>
+
+          <!-- Bố cục 2 cột -->
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            
+            <!-- CỘT TRÁI: Form chọn món, số tiền, lời nhắn & STK -->
+            <div class="lg:col-span-6 space-y-4">
+              <div class="bg-white/95 rounded-2xl p-5 shadow-sm border border-white space-y-4">
+                <div>
+                  <h4 class="text-sm font-extrabold text-slate-900 flex items-center gap-2">
+                    <i class="fa-solid fa-hand-holding-heart text-slate-800"></i> Hành Trình Minh Bạch Của Sự Tin Tưởng
+                  </h4>
+                  <p class="mt-2 text-xs leading-relaxed text-slate-600">
+                    Chào bạn! Đây là "Dự án Nuôi Tôi". Mỗi sự đóng góp của bạn không chỉ là hỗ trợ tài chính, mà còn là những gói mì, ly cà phê giúp mình tiếp tục cống hiến cho ăn vặt của mình. Cảm ơn bạn đã đồng hành cùng chiếc bụng đói của mình! 🍷
+                  </p>
+                </div>
+
+                <!-- Thực đơn tiếp tế -->
+                <div>
+                  <label class="block text-[10px] font-extrabold text-slate-500 uppercase tracking-wider mb-2">THỰC ĐƠN TIẾP TẾ</label>
+                  <div class="grid grid-cols-4 gap-2">
+                    <button type="button" onclick="selectDonatePreset(15000, 'Tiếp tế 1 gói Mì Tôm 🍜')" class="p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/80 flex flex-col items-center gap-1 transition cursor-pointer">
+                      <span class="text-base">🍜</span>
+                      <span class="text-[10px] font-bold text-slate-700">MÌ TÔM</span>
+                    </button>
+                    <button type="button" onclick="selectDonatePreset(25000, 'Tiếp tế 1 ly Cà Phê ☕')" class="p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/80 flex flex-col items-center gap-1 transition cursor-pointer">
+                      <span class="text-base">☕</span>
+                      <span class="text-[10px] font-bold text-slate-700">CÀ PHÊ</span>
+                    </button>
+                    <button type="button" onclick="selectDonatePreset(45000, 'Tiếp tế 1 hộp Cơm Gà 🍗')" class="p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/80 flex flex-col items-center gap-1 transition cursor-pointer">
+                      <span class="text-base">🍗</span>
+                      <span class="text-[10px] font-bold text-slate-700">CƠM GÀ</span>
+                    </button>
+                    <button type="button" onclick="selectDonatePreset(120000, 'Tiếp tế 1 nồi Lẩu Mini 🍲')" class="p-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200/80 flex flex-col items-center gap-1 transition cursor-pointer">
+                      <span class="text-base">🍲</span>
+                      <span class="text-[10px] font-bold text-slate-700">LẨU MINI</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Các mốc tiền nhanh -->
+                <div class="flex flex-wrap gap-2">
+                  <button type="button" onclick="setDonateAmount(20000)" class="px-3 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 text-xs font-bold text-slate-700 transition cursor-pointer">20.000đ</button>
+                  <button type="button" onclick="setDonateAmount(50000)" class="px-3 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 text-xs font-bold text-slate-700 transition cursor-pointer">50.000đ</button>
+                  <button type="button" onclick="setDonateAmount(100000)" class="px-3 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 text-xs font-bold text-slate-700 transition cursor-pointer">100.000đ</button>
+                  <button type="button" onclick="setDonateAmount(200000)" class="px-3 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 text-xs font-bold text-slate-700 transition cursor-pointer">200.000đ</button>
+                  <button type="button" onclick="setDonateAmount(500000)" class="px-3 py-1.5 rounded-lg bg-slate-50 hover:bg-slate-100 border border-slate-200/80 text-xs font-bold text-slate-700 transition cursor-pointer">500.000đ</button>
+                </div>
+
+                <!-- Nhập số tiền tùy chỉnh -->
+                <div>
+                  <input type="number" id="donateAmountInput" placeholder="Nhập số tiền tùy chỉnh..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-100/80 border border-slate-200/80 text-xs font-semibold text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-slate-400">
+                </div>
+
+                <!-- Lời nhắn -->
+                <div>
+                  <div class="flex items-center justify-between mb-1.5">
+                    <label class="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider">LỜI NHẮN</label>
+                    <button type="button" onclick="suggestDonateMessage()" class="text-[10px] font-bold text-slate-500 hover:text-slate-900 underline cursor-pointer">GỢI Ý LỜI NHẮN?</button>
+                  </div>
+                  <textarea id="donateMessageInput" rows="3" placeholder="Để lại lời nhắn cho mình nhé..." class="w-full px-3.5 py-2.5 rounded-xl bg-slate-100/80 border border-slate-200/80 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:border-slate-400 resize-none"></textarea>
+                </div>
+
+                <!-- Nút cập nhật QR -->
+                <button type="button" onclick="updateDonateQR()" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-extrabold text-xs flex items-center justify-center gap-2 shadow-xs transition cursor-pointer">
+                  <i class="fa-solid fa-qrcode"></i> CẬP NHẬT MÃ QR
+                </button>
+              </div>
+
+              <!-- Khung Số tài khoản & Nút Copy -->
+              <div class="bg-white/95 rounded-2xl p-4 shadow-sm border border-white flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-slate-700">
+                    <i class="fa-solid fa-building-columns text-sm"></i>
+                  </div>
+                  <div>
+                    <div class="text-[10px] font-bold text-slate-500">Số tài khoản</div>
+                    <div id="bankAccountNumber" class="text-sm font-extrabold text-slate-900 tracking-wide">1204020000</div>
+                  </div>
+                </div>
+                <button type="button" onclick="copyBankAccount(this)" title="Sao chép số tài khoản" class="w-9 h-9 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center transition cursor-pointer">
+                  <i class="fa-regular fa-copy text-xs"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- CỘT PHẢI: Mã VietQR động -->
+            <div class="lg:col-span-6 flex flex-col items-center">
+              <div class="w-full max-w-[340px] bg-white rounded-3xl p-5 shadow-md border border-white relative text-center">
+                <!-- Icon tim góc trên phải -->
+                <span class="absolute top-3.5 right-3.5 w-6 h-6 rounded-full bg-slate-100 text-slate-600 flex items-center justify-center text-[10px]">
+                  <i class="fa-solid fa-heart"></i>
+                </span>
+
+                <!-- Ảnh mã QR tự động sinh từ VietQR API -->
+                <div class="overflow-hidden rounded-2xl bg-white p-1">
+                  <img id="vietQrImage" src="https://img.vietqr.io/image/ICB-SO_TAI_KHOAN_CUA_BAN-compact2.png?accountName=SON%20NGOC%20THANH" alt="Mã VietQR Ủng Hộ" class="w-full h-auto mx-auto rounded-xl">
+                </div>
+
+                <div class="mt-3 pt-2 border-t border-slate-100">
+                  <p class="text-xs font-extrabold text-slate-800">Quét mã để ủng hộ</p>
+                  <div class="mt-2 flex items-center justify-center gap-2">
+                    <span id="bankBadgeName" class="px-2.5 py-1 rounded-md bg-slate-100 text-[10px] font-bold text-slate-600 uppercase">TECHCOMBANK</span>
+                    <span class="px-2.5 py-1 rounded-md bg-slate-100 text-[10px] font-bold text-slate-600 uppercase">VIETQR</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4 flex items-center gap-2 text-[11px] font-extrabold text-slate-700">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+                GIAO DỊCH AN TOÀN & TRỰC TIẾP
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Câu Quote ở đáy -->
+          <div class="max-w-xl mx-auto bg-white/85 rounded-2xl px-5 py-3 text-center border border-white shadow-xs">
+            <p class="text-[11px] italic font-medium text-slate-600">
+              "Một miếng khi đói bằng một gói khi no. Cảm ơn vì đã không để mình bị 'đói' ý tưởng và 'đói' cả cơm!"
+            </p>
+          </div>
+        </div>
+    
+  
+  <!-- TAB CONTENT: MẠNG XÃ HỘI (MXH) -->
+<div id="tab-mxh" class="tab-content hidden space-y-6">
+  <!-- Tiêu đề Tab -->
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+    <div>
+      <div class="inline-flex items-center gap-2.5 bg-white/35 px-3.5 py-1.5 rounded-lg border border-white/50 shadow-xs">
+  <span class="w-1.5 h-6 bg-slate-900 rounded-full"></span>
+  <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">Mạng Xã Hội &amp; Kết Bạn 🌐</h2>
+</div>
+      <p class="text-xs sm:text-sm font-medium text-black mt-1">
+        Kết nối, nhắn tin, giao lưu chơi game hoặc theo dõi các hoạt động thường ngày của mình trên các nền tảng bên dưới ✨
+      </p>
+    </div>
+    <div class="inline-flex items-center gap-2 bg-white/85 px-3.5 py-1.5 rounded-full border border-white shadow-xs self-start">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+      <span class="text-xs font-semibold text-slate-600">Sẵn sàng kết bạn</span>
+    </div>
+  </div>
+
+  <!-- Lưới 6 Thẻ Mạng Xã Hội -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+    <!-- 1. FACEBOOK -->
+    <div class="bg-white/90 rounded-2xl p-5 border border-white shadow-sm flex flex-col justify-between space-y-4 transition hover:-translate-y-1">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-blue-600 text-white flex items-center justify-center text-xl shadow-xs">
+            <i class="fa-brands fa-facebook-f"></i>
+          </div>
+          <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-blue-50 text-blue-600 uppercase">Trang Cá Nhân</span>
+        </div>
+        <div>
+          <h3 class="text-base font-extrabold text-slate-900">Facebook</h3>
+          <p class="text-xs font-semibold text-blue-600 mt-0.5">Ng Thành (Sei)</p>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Kênh giao lưu chính, cập nhật cuộc sống hàng ngày và trao đổi công việc, học tập.
+          </p>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-100 flex items-center gap-2">
+        <a href="https://www.facebook.com/share/1QJFtEB5h9/?mibextid=wwXIfr" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-user-plus"></i> Kết bạn ngay
+        </a>
+        <button type="button" onclick="copySocial('https://www.facebook.com/share/1QJFtEB5h9/?mibextid=wwXIfr', 'link Facebook')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs transition cursor-pointer" title="Sao chép link">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 2. TIKTOK -->
+    <div class="bg-white/90 rounded-2xl p-5 border border-white shadow-sm flex flex-col justify-between space-y-4 transition hover:-translate-y-1">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-slate-900 text-white flex items-center justify-center text-xl shadow-xs">
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+          <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 uppercase">Video &amp; Live</span>
+        </div>
+        <div>
+          <h3 class="text-base font-extrabold text-slate-900">TikTok</h3>
+          <p class="text-xs font-semibold text-slate-700 mt-0.5">@sei.161</p>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Nơi chia sẻ highlight game Liên Quân, Minecraft, lập trình và livestream giao lưu buổi tối.
+          </p>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-100 flex items-center gap-2">
+        <a href="https://www.tiktok.com/@sei.161" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-plus"></i> Follow kênh
+        </a>
+        <button type="button" onclick="copySocial('@sei.161', 'ID TikTok')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs transition cursor-pointer" title="Sao chép ID">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 3. INSTAGRAM -->
+    <div class="bg-white/90 rounded-2xl p-5 border border-white shadow-sm flex flex-col justify-between space-y-4 transition hover:-translate-y-1">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center text-xl shadow-xs">
+            <i class="fa-brands fa-instagram"></i>
+          </div>
+          <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-rose-50 text-rose-600 uppercase">Story &amp; Ảnh</span>
+        </div>
+        <div>
+          <h3 class="text-base font-extrabold text-slate-900">Instagram</h3>
+          <p class="text-xs font-semibold text-rose-600 mt-0.5">@idwtbl.sei_</p>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Lưu giữ những khoảnh khắc đời thường, góc setup máy tính và những bức ảnh kỷ niệm.
+          </p>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-100 flex items-center gap-2">
+        <a href="https://www.instagram.com/idwtbl.sei_" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-gradient-to-r from-rose-500 to-purple-600 hover:opacity-95 text-white text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-user-plus"></i> Theo dõi IG
+        </a>
+        <button type="button" onclick="copySocial('@idwtbl.sei_', 'ID Instagram')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs transition cursor-pointer" title="Sao chép ID">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 4. DISCORD -->
+    <div class="bg-white/90 rounded-2xl p-5 border border-white shadow-sm flex flex-col justify-between space-y-4 transition hover:-translate-y-1">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-xs">
+            <i class="fa-brands fa-discord"></i>
+          </div>
+          <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-600 uppercase">Voice &amp; Game</span>
+        </div>
+        <div>
+          <h3 class="text-base font-extrabold text-slate-900">Discord</h3>
+          <p class="text-xs font-semibold text-indigo-600 mt-0.5">noirsei161</p>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            On-mic voice chat leo rank Valorant, LMHT, thảo luận code và quản lý server Minecraft.
+          </p>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-100 flex items-center gap-2">
+        <a href="https://discord.com/users/noirsei161" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-user-plus"></i> Kết bạn Discord
+        </a>
+        <button type="button" onclick="copySocial('noirsei161', 'Username Discord')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs transition cursor-pointer" title="Sao chép Username">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 5. ZALO -->
+    <div class="bg-white/90 rounded-2xl p-5 border border-white shadow-sm flex flex-col justify-between space-y-4 transition hover:-translate-y-1">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-sky-500 text-white flex items-center justify-center font-extrabold text-sm shadow-xs">
+            Zalo
+          </div>
+          <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-sky-50 text-sky-600 uppercase">Nhắn Tin Nhanh</span>
+        </div>
+        <div>
+          <h3 class="text-base font-extrabold text-slate-900">Zalo</h3>
+          <p class="text-xs font-semibold text-sky-600 mt-0.5">Sơn Ngọc Thành</p>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Liên hệ trực tiếp nhanh nhất qua Zalo để trao đổi công việc, dự án hoặc nhắn tin trò chuyện.
+          </p>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-100 flex items-center gap-2">
+        <a href="https://zalo.me/0369993520" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white text-xs font-bold text-center transition flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-comment-dots"></i> Nhắn / Kết bạn
+        </a>
+        <button type="button" onclick="copySocial('0369993520', 'SĐT Zalo')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs transition cursor-pointer" title="Sao chép SĐT">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- 6. LOCKET -->
+    <div class="bg-white/90 rounded-2xl p-5 border border-white shadow-sm flex flex-col justify-between space-y-4 transition hover:-translate-y-1">
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-2xl bg-amber-400 text-slate-900 flex items-center justify-center text-xl shadow-xs">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 uppercase">Widget Bạn Thân</span>
+        </div>
+        <div>
+          <h3 class="text-base font-extrabold text-slate-900">Locket Widget</h3>
+          <p class="text-xs font-semibold text-amber-600 mt-0.5">Ng Thành</p>
+          <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+            Gửi ảnh trực tiếp lên màn hình chính điện thoại cho hội bạn thân xem mỗi ngày.
+          </p>
+        </div>
+      </div>
+      <div class="pt-2 border-t border-slate-100 flex items-center gap-2">
+        <a href="https://locket.cam/thanhsei" target="_blank" class="flex-1 py-2 px-3 rounded-xl bg-amber-400 hover:bg-amber-500 text-slate-900 text-xs font-extrabold text-center transition flex items-center justify-center gap-1.5">
+          <i class="fa-solid fa-user-plus"></i> Kết bạn Locket
+        </a>
+        <button type="button" onclick="copySocial('https://locket.cam/thanhsei', 'link Locket')" class="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs transition cursor-pointer" title="Sao chép link">
+          <i class="fa-regular fa-copy"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+</main>
+
+  <!-- STATUS FOOTER BAR -->
+  <footer class="w-full max-w-[1060px] mt-4 glass-panel rounded-[20px] p-3 flex flex-wrap items-center justify-between gap-2 text-[11px] font-bold text-slate-700 relative z-10">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="glass-pill px-3.5 py-2 rounded-xl">2026 © noirsei_</span>
+      <span class="glass-pill px-3.5 py-2 rounded-xl flex items-center gap-1.5">
+        <i class="fa-regular fa-clock text-slate-600"></i>
+        <span id="liveClock">10:47:33 PM</span>
+      </span>
+    </div>
+
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="glass-pill px-3.5 py-2 rounded-xl flex items-center gap-1.5 text-slate-700">
+        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        SYSTEM STABLE
+      </span>
+      <span class="glass-pill px-3.5 py-2 rounded-xl hidden sm:inline-flex items-center gap-1.5 font-mono text-[10px] text-slate-600">
+        <i class="fa-solid fa-network-wired"></i>
+        2402:800:634F:2C4D:B1B8:2305:C61E:1E5B
+      </span>
+      <span class="glass-pill px-3.5 py-2 rounded-xl flex items-center gap-1 text-slate-700">
+        <i class="fa-solid fa-signal text-emerald-600"></i>
+        <span id="pingValue">30MS</span>
+      </span>
+      <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="glass-pill px-3.5 py-2 rounded-xl flex items-center gap-1.5 hover:bg-white transition cursor-pointer text-slate-800">
+        <i class="fa-solid fa-house text-slate-700"></i> TRANG CHỦ
+      </button>
+    </div>
+  </footer>
+
+  <!-- FLOATING MUSIC PLAYER -->
+  <div class="fixed bottom-4 right-4 z-50">
+    
+    <!-- 1. TRẠNG THÁI THU NHỎ (CỤC TRÒN ĐĨA ĐEN XOAY) -->
+    <button id="miniMusicBubble" onclick="toggleMinimizePlayer()" title="Mở trình phát nhạc" class="hidden w-14 h-14 rounded-full bg-white/95 backdrop-blur-md shadow-xl border border-white flex items-center justify-center hover:scale-105 transition cursor-pointer">
+      <div id="miniDiscIcon" class="w-8 h-8 rounded-full bg-slate-900 flex items-center justify-center spin-disc spin-paused shadow-inner">
+        <div class="w-2.5 h-2.5 rounded-full bg-white flex items-center justify-center">
+          <div class="w-1 h-1 rounded-full bg-slate-900"></div>
+        </div>
+      </div>
+    </button>
+
+    <!-- 2. TRẠNG THÁI MỞ RỘNG (FULL PLAYER + PLAYLIST) -->
+    <div id="fullMusicPlayer" class="w-80 bg-white/90 backdrop-blur-xl rounded-2xl p-4 shadow-2xl border border-white transition-all">
+      <!-- Header -->
+      <div class="flex items-center justify-between gap-3">
+        <div class="flex items-center gap-3 overflow-hidden">
+          <!-- Icon đĩa nhạc vuông bo góc -->
+          <div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200/80 flex items-center justify-center shrink-0">
+            <div id="musicDisc" class="w-6 h-6 rounded-full bg-slate-800 flex items-center justify-center spin-disc spin-paused">
+              <div class="w-2 h-2 rounded-full bg-white flex items-center justify-center">
+                <div class="w-0.5 h-0.5 rounded-full bg-slate-800"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Tên bài & thời gian -->
+          <div class="truncate">
+            <div id="trackTitle" class="text-xs font-extrabold text-slate-900 truncate"> Một chút suy!!!</div>
+            <div id="trackTime" class="text-[11px] font-medium text-slate-500 mt-0.5">0:00 / 0:00</div>
+          </div>
+        </div>
+
+        <!-- Nút Playlist & Nút Thu nhỏ -->
+        <div class="flex items-center gap-2.5 text-slate-600 text-sm shrink-0">
+          <button onclick="togglePlaylist()" id="playlistToggleBtn" title="Danh sách phát" class="hover:text-slate-950 transition cursor-pointer">
+            <i class="fa-solid fa-list-ul"></i>
+          </button>
+          <button onclick="toggleMinimizePlayer()" title="Thu nhỏ thành đĩa xoay" class="hover:text-slate-950 transition cursor-pointer">
+            <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Thanh tiến trình tua nhạc -->
+      <div class="mt-3">
+        <input type="range" id="progressBar" value="0" min="0" max="100" oninput="seekMusic(this.value)" class="w-full h-1 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-slate-800">
+      </div>
+
+      <!-- Các nút điều khiển -->
+      <div class="mt-3 flex items-center justify-between px-4 text-slate-700">
+        <button onclick="toggleShuffle()" id="shuffleBtn" title="Phát ngẫu nhiên" class="hover:text-slate-950 text-xs transition cursor-pointer text-slate-400">
+          <i class="fa-solid fa-shuffle"></i>
+        </button>
+        <button onclick="prevTrack()" title="Bài trước" class="hover:text-slate-950 text-sm transition cursor-pointer">
+          <i class="fa-solid fa-backward-step"></i>
+        </button>
+        <button onclick="togglePlayMusic()" id="playPauseBtn" title="Phát / Tạm dừng" class="w-9 h-9 rounded-full bg-white border border-slate-200 text-slate-900 flex items-center justify-center hover:scale-105 transition cursor-pointer shadow-sm">
+          <i class="fa-solid fa-play text-xs ml-0.5"></i>
+        </button>
+        <button onclick="nextTrack()" title="Bài tiếp theo" class="hover:text-slate-950 text-sm transition cursor-pointer">
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+        <button onclick="toggleRepeat()" id="repeatBtn" title="Lặp lại" class="w-7 h-7 rounded-full bg-slate-100 text-slate-800 flex items-center justify-center text-xs transition cursor-pointer">
+          <i class="fa-solid fa-repeat"></i>
+        </button>
+      </div>
+
+      <!-- Danh sách phát (Playlist) -->
+      <div id="playlistContainer" class="hidden mt-3 pt-2.5 border-t border-slate-200/70 max-h-44 overflow-y-auto space-y-1 pr-1">
+        <!-- JS sẽ tự động tạo danh sách bài hát tại đây -->
+      </div>
+    
+
+  </div>
+  <script>
+    // 1. Đồng hồ & Ping mạng
+    function updateClock() {
+      const now = new Date();
+      document.getElementById('liveClock').textContent = now.toLocaleTimeString('en-US', {
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    setInterval(() => {
+      const ping = Math.floor(Math.random() * (58 - 44 + 1)) + 44;
+      document.getElementById('pingValue').textContent = ping + 'MS';
+    }, 3500);
+
+    // 2. Nút Xem thêm ở Bio
+    function toggleMoreBio() {
+      const extra = document.getElementById('extraBioText');
+      extra.classList.toggle('hidden');
+    }
+
+    // 3. Chuyển đổi các Tab Menu
+    function switchTab(tabName, btnElement) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.getElementById('tab-' + tabName).classList.remove('hidden');
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('active');
+        btn.classList.add('text-slate-700');
+      });
+      btnElement.classList.add('active');
+      btnElement.classList.remove('text-slate-700');
+    }
+
+    // 4. Thư viện ảnh xếp chồng
+    const galleryPhotos = [
+      { url: 'hiepthanh1.jpg', label: 'Images 1' },
+      { url: 'hiepthanh.jpg', label: 'Images 2' },
+      { url: 'noelyenvu.jpg', label: 'Images 3' },
+      { url: 'luisvutton.jpg', label: 'Images 4' },
+      { url: 'tvithichanhnay.jpg', label: 'Images 5' },
+      { url: 'bienbadong.jpg', label: 'Images 6' }
+    ];
+    let currentPhotoIdx = 0;
+
+    function updateGallery() {
+      const total = galleryPhotos.length;
+      const front = galleryPhotos[currentPhotoIdx];
+      const back1 = galleryPhotos[(currentPhotoIdx + 1) % total];
+      const back2 = galleryPhotos[(currentPhotoIdx + 2) % total];
+
+      document.getElementById('currentGalleryImg').src = front.url;
+      document.querySelector('#photoCardBack1 img').src = back1.url;
+      document.querySelector('#photoCardBack2 img').src = back2.url;
+
+      document.getElementById('photoCounter').textContent = `${currentPhotoIdx + 1} / ${total}`;
+      document.getElementById('photoCaption').innerHTML = `Đang xem: <strong class="text-slate-900">${front.label}</strong>`;
+
+      const dots = document.getElementById('photoDots').children;
+      for (let i = 0; i < dots.length; i++) {
+        if (i === currentPhotoIdx) {
+          dots[i].className = 'w-4 h-1.5 rounded-full bg-slate-800 transition-all';
+        } else {
+          dots[i].className = 'w-1.5 h-1.5 rounded-full bg-slate-400 transition-all';
+        }
+      }
+    }
+
+    function nextPhoto() {
+      currentPhotoIdx = (currentPhotoIdx + 1) % galleryPhotos.length;
+      updateGallery();
+    }
+
+    function prevPhoto() {
+      currentPhotoIdx = (currentPhotoIdx - 1 + galleryPhotos.length) % galleryPhotos.length;
+      updateGallery();
+    }
+
+    // 5. Phát Video YouTube
+    function playYoutubeVideo() {
+      document.getElementById('videoPoster').classList.add('hidden');
+      const iframe = document.getElementById('youtubeIframe');
+      iframe.src = 'https://www.youtube.com/embed/2zJeV5NJSl8?autoplay=1';
+      iframe.classList.remove('hidden');
+    }
+
+    // 6. TRÌNH PHÁT NHẠC & PLAYLIST (Sửa tên bài và file .mp3 tại đây)
+    const playlist = [
+      { title: 'Tìm em, Ngày rời chuyến bay, Xương rồng, Em….', file: 'bainhac1.mp3' },
+      { title: 'Ngày Em Đẹp Nhất - Tama x Bell (Lofi)', file: 'bai2.mp3' },
+      { title: 'Tình Xưa Nghĩa Cũ (Lofi ver) - Đạt Long Vinh', file: 'bai3.mp3' },
+      { title: 'Nếu Ngày Ấy, Xin Đừng Lặng Im', file: 'bai4.mp3' },
+      { title: 'Nhạc Ballad Nhẹ Nhàng - Nhạc 8x 9x', file: 'bai5.mp3' },
+      { title: 'Yêu Một Người Bằng Hết Con Tim', file: 'bai6.mp3' },
+      { title: 'Tìm Em - Anh Hãy Thôi Chờ Em Đi Anh', file: 'bai7.mp3' },
+      { title: 'Nhạc Lofi Thư Giãn Học Bài & Làm Việc', file: 'bai8.mp3' }
+    ];
+
+    let trackIdx = 0;
+    let isPlaying = false;
+    let isShuffle = false;
+    let isRepeat = true;
+    const audioPlayer = new Audio(playlist[trackIdx].file);
+
+    function formatTime(sec) {
+      if (isNaN(sec)) return '0:00';
+      const mins = Math.floor(sec / 60);
+      const secs = String(Math.floor(sec % 60)).padStart(2, '0');
+      return `${mins}:${secs}`;
+    }
+
+    function renderPlaylist() {
+      const container = document.getElementById('playlistContainer');
+      container.innerHTML = playlist.map((song, idx) => {
+        const isCurrent = idx === trackIdx;
+        return `
+          <div onclick="selectTrack(${idx})" class="flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-xs cursor-pointer transition ${
+            isCurrent 
+              ? 'bg-slate-200/80 font-bold text-slate-900 shadow-xs' 
+              : 'text-slate-600 hover:bg-slate-100 font-medium'
+          }">
+            <i class="fa-solid ${isCurrent ? 'fa-volume-high text-slate-900' : 'fa-music text-slate-400'} text-[11px] w-3.5 shrink-0"></i>
+            <span class="truncate">${song.title}</span>
+          </div>
+        `;
+      }).join('');
+    }
+
+    function updateDiscAnimation(playing) {
+      const disc1 = document.getElementById('musicDisc');
+      const disc2 = document.getElementById('miniDiscIcon');
+      if (playing) {
+        disc1.classList.remove('spin-paused');
+        disc2.classList.remove('spin-paused');
+      } else {
+        disc1.classList.add('spin-paused');
+        disc2.classList.add('spin-paused');
+      }
+    }
+
+    function togglePlayMusic() {
+      const btn = document.getElementById('playPauseBtn');
+      if (!isPlaying) {
+        audioPlayer.play();
+        isPlaying = true;
+        btn.innerHTML = '<i class="fa-solid fa-pause text-xs"></i>';
+        updateDiscAnimation(true);
+      } else {
+        audioPlayer.pause();
+        isPlaying = false;
+        btn.innerHTML = '<i class="fa-solid fa-play text-xs ml-0.5"></i>';
+        updateDiscAnimation(false);
+      }
+    }
+
+    function selectTrack(index) {
+      trackIdx = index;
+      audioPlayer.src = playlist[trackIdx].file;
+      document.getElementById('trackTitle').textContent = playlist[trackIdx].title;
+      document.getElementById('progressBar').value = 0;
+      renderPlaylist();
+      
+      audioPlayer.play();
+      isPlaying = true;
+      document.getElementById('playPauseBtn').innerHTML = '<i class="fa-solid fa-pause text-xs"></i>';
+      updateDiscAnimation(true);
+    }
+
+    function nextTrack() {
+      if (isShuffle) {
+        trackIdx = Math.floor(Math.random() * playlist.length);
+      } else {
+        trackIdx = (trackIdx + 1) % playlist.length;
+      }
+      selectTrack(trackIdx);
+    }
+
+    function prevTrack() {
+      trackIdx = (trackIdx - 1 + playlist.length) % playlist.length;
+      selectTrack(trackIdx);
+    }
+
+    function seekMusic(val) {
+      if (!isNaN(audioPlayer.duration)) {
+        audioPlayer.currentTime = (val / 100) * audioPlayer.duration;
+      }
+    }
+
+    function toggleShuffle() {
+      isShuffle = !isShuffle;
+      const btn = document.getElementById('shuffleBtn');
+      btn.classList.toggle('text-slate-900', isShuffle);
+      btn.classList.toggle('text-slate-400', !isShuffle);
+    }
+
+    function toggleRepeat() {
+      isRepeat = !isRepeat;
+      const btn = document.getElementById('repeatBtn');
+      btn.classList.toggle('bg-slate-200', isRepeat);
+      btn.classList.toggle('text-slate-900', isRepeat);
+      btn.classList.toggle('text-slate-400', !isRepeat);
+    }
+
+    function togglePlaylist() {
+      document.getElementById('playlistContainer').classList.toggle('hidden');
+    }
+
+    function toggleMinimizePlayer() {
+      document.getElementById('fullMusicPlayer').classList.toggle('hidden');
+      document.getElementById('miniMusicBubble').classList.toggle('hidden');
+    }
+
+    audioPlayer.addEventListener('loadedmetadata', () => {
+      document.getElementById('trackTime').textContent = `0:00 / ${formatTime(audioPlayer.duration)}`;
+    });
+
+    audioPlayer.addEventListener('timeupdate', () => {
+      const current = formatTime(audioPlayer.currentTime);
+      const total = formatTime(audioPlayer.duration);
+      document.getElementById('trackTime').textContent = `${current} / ${total}`;
+      if (!isNaN(audioPlayer.duration)) {
+        document.getElementById('progressBar').value = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+      }
+    });
+
+    audioPlayer.addEventListener('ended', () => {
+      if (isRepeat && playlist.length === 1) {
+        audioPlayer.currentTime = 0;
+        audioPlayer.play();
+      } else {
+        nextTrack();
+      }
+    });
+
+    document.getElementById('trackTitle').textContent = playlist[trackIdx].title;
+    renderPlaylist();
+    // 7. XỬ LÝ TAB NUÔI TÔI & TẠO MÃ VIETQR ĐỘNG
+    const BANK_CONFIG = {
+      bankId: 'ICB',
+      bankDisplayName: 'VIETINBANK',
+      accountNo: '100861486161',      
+      accountName: 'SON NGOC THANH' 
+    };
+
+    document.getElementById('bankAccountNumber').textContent = BANK_CONFIG.accountNo;
+    document.getElementById('bankBadgeName').textContent = BANK_CONFIG.bankDisplayName;
+
+    function setDonateAmount(amount) {
+      document.getElementById('donateAmountInput').value = amount;
+      updateDonateQR();
+    }
+
+    function selectDonatePreset(amount, note) {
+      document.getElementById('donateAmountInput').value = amount;
+      document.getElementById('donateMessageInput').value = note;
+      updateDonateQR();
+    }
+
+    const sampleMessages = [
+      'Cố lên nhé, code ít thôi giữ gìn sức khỏe!',
+      'Gửi chút năng lượng tiếp tế cho chiếc bụng đói!',
+      'Mời bạn ly cà phê thức đêm fix bug nè ☕',
+      'Chúc dự án của bạn ngày càng phát triển!'
+    ];
+
+    function suggestDonateMessage() {
+      const randomMsg = sampleMessages[Math.floor(Math.random() * sampleMessages.length)];
+      document.getElementById('donateMessageInput').value = randomMsg;
+    }
+
+    function updateDonateQR() {
+      const amount = document.getElementById('donateAmountInput').value.trim();
+      const message = document.getElementById('donateMessageInput').value.trim();
+      
+      let qrUrl = `https://img.vietqr.io/image/${BANK_CONFIG.bankId}-${BANK_CONFIG.accountNo}-compact2.png?accountName=${encodeURIComponent(BANK_CONFIG.accountName)}`;
+      if (amount && Number(amount) > 0) {
+        qrUrl += `&amount=${amount}`;
+      }
+      if (message) {
+        qrUrl += `&addInfo=${encodeURIComponent(message)}`;
+      }
+      document.getElementById('vietQrImage').src = qrUrl;
+    }
+
+    function copyBankAccount(btn) {
+      navigator.clipboard.writeText(BANK_CONFIG.accountNo);
+      const originalHtml = btn.innerHTML;
+      btn.innerHTML = '<i class="fa-solid fa-check text-emerald-600 text-xs"></i>';
+      setTimeout(() => {
+        btn.innerHTML = originalHtml;
+      }, 1500);
+    }
+
+    let isUserOnline = true;
+function toggleOnlineStatus() {
+  isUserOnline = !isUserOnline;
+  const dot = document.getElementById('statusDot');
+  const text = document.getElementById('statusText');
+  if (isUserOnline) {
+    dot.className = 'w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse';
+    text.textContent = 'Đang Online';
+  } else {
+    dot.className = 'w-2.5 h-2.5 rounded-full bg-red-500 inline-block';
+    text.textContent = 'Đang Offline';
+  }
+}
+// 8. LỌC & TÌM KIẾM DANH MỤC GAME
+function filterGames(category, btnEl) {
+  document.querySelectorAll('.game-filter-btn').forEach(btn => {
+    btn.classList.remove('active', 'bg-slate-900', 'text-white', 'font-bold');
+    btn.classList.add('bg-white/80', 'text-slate-700', 'font-semibold');
+  });
+  btnEl.classList.add('active', 'bg-slate-900', 'text-white', 'font-bold');
+  btnEl.classList.remove('bg-white/80', 'text-slate-700', 'font-semibold');
+
+  document.querySelectorAll('.game-card').forEach(card => {
+    const cats = card.getAttribute('data-category') || '';
+    if (category === 'all' || cats.includes(category)) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+
+function searchGames() {
+  const keyword = document.getElementById('gameSearchInput').value.toLowerCase().trim();
+  document.querySelectorAll('.game-card').forEach(card => {
+    const name = (card.getAttribute('data-name') || '').toLowerCase();
+    const text = card.textContent.toLowerCase();
+    if (name.includes(keyword) || text.includes(keyword)) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+// 9. SAO CHÉP ID / LINK MẠNG XÃ HỘI
+function copySocial(value, label) {
+  navigator.clipboard.writeText(value);
+  alert('Đã sao chép ' + label + ': ' + value);
+}
+  </script>
+</body>
+</html>
